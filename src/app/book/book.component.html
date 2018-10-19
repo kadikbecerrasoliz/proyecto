@@ -1,0 +1,11 @@
+<div>
+    <img class="columnOne" src="{{ book.coverPage }}">
+    <h4>Titulo: {{ book.Title }}</h4>
+    <h4>Autor: {{ book.Author }}</h4>
+    <h4>Siponpsis: {{ book.Sinopsis }}</h4>
+    <p>Genero: {{ book.genre }}</p>
+    <mat-card-actions class="columnThree">
+        <button mat-raised-button color="primary" class="libros" routerLink="/books">Libros</button>
+        <button mat-raised-button color="primary" (click)="downloadFile()">Descargar</button>
+    </mat-card-actions>
+</div>

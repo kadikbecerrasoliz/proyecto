@@ -1,0 +1,15 @@
+<mat-card>
+  <br>
+  <h2 class="title">{{ title }}</h2>
+  <br>
+  <h3>LIBROS</h3>
+  <br>
+  <div class="listGroup">
+    <div *ngFor="let book of books" class="columns">
+      <div class="separator"></div>
+      <div class="columnTwo">
+        <h3><a (click)="redirectPage(book.id)">Titulo: {{ book.Title }}</a></h3>
+      </div>
+    </div>
+  </div>
+</mat-card>

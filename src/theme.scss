@@ -1,0 +1,23 @@
+@import '../node_modules/@angular/material/_theming.scss';
+
+@include mat-core();
+
+$primary: #00adb5;
+$accent: #393e46;
+
+$mat-light-theme-foreground: ( base: $primary, divider: $primary, dividers: $primary, disabled: $primary, disabled-button: rgba(black, 0.26), disabled-text: $accent, hint-text: $accent, secondary-text: $accent, icon: $accent, icons: $accent, text: rgba(black, 0.87), slider-min: rgba(black, 0.87), slider-off: rgba(black, 0.26), slider-off-active: rgba(black, 0.38), );
+
+@function myTheme($primary, $accent, $warn) {
+  @return ( primary: $primary, accent: $accent, warn: $warn, is-dark: false, foreground: $mat-light-theme-foreground, background: $mat-light-theme-background, );
+}
+
+$mat-primary: ( 50 : #e0f5f6, 100 : #b3e6e9, 200 : #80d6da, 300 : #4dc6cb, 400 : #26b9c0, 500 : #00adb5, 600 : #00a6ae, 700 : #009ca5, 800 : #00939d, 900 : #00838d, A100 : #b9f9ff, A200 : #86f5ff, A400 : #53f0ff, A700 : #3aeeff, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, ) );
+$mat-accent: ( 50 : #e7e8e9, 100 : #c4c5c8, 200 : #9c9fa3, 300 : #74787e, 400 : #575b62, 500 : #393e46, 600 : #33383f, 700 : #2c3037, 800 : #24282f, 900 : #171b20, A100 : #67a8ff, A200 : #348bff, A400 : #016eff, A700 : #0063e6, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #ffffff, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #ffffff, A400 : #ffffff, A700 : #ffffff, ) );
+
+$candy-app-primary: mat-palette($mat-primary);
+$candy-app-accent: mat-palette($mat-accent);
+$candy-app-warn: mat-palette($mat-red, 400);
+
+$myTheme: myTheme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+@include angular-material-theme($myTheme);
